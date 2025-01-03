@@ -62,7 +62,7 @@ Este proyecto está bajo la licencia MIT. Consulta el archivo LICENSE para más 
 ## Contacto
 
 1. Email: miguels.jimenezv@gmail.com
-2. Sitio web: inmarket.com
+2. Sitio web: https://miguelsjimenezv.github.io/InMarket/
 
 ## Autor
 
