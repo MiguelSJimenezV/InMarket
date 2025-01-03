@@ -1,0 +1,46 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap");
+body {
+  font-family: "Montserrat", sans-serif;
+}
+
+.image-side {
+  background-image: url("../img/btc-1.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+input[type="submit"] {
+  margin: 9px auto 0px;
+  width: 50%;
+  border: solid 0px #ada2a2;
+  border-radius: 4px;
+  text-transform: uppercase;
+  font-weight: 700;
+  padding: 7px 3px;
+  height: 37px;
+  font-family: "Montserrat", sans-serif;
+  background-color: #f3c019;
+}
+
+input[type="submit"]:hover {
+  color: #f3c019;
+  background-color: rgb(39, 39, 39);
+  border: solid 2px #f3c019;
+}
+.error {
+  color: red;
+}
+.display-info p span {
+  font-weight: 700;
+}
+.display-info .main-price {
+  font-size: 28px;
+  margin-bottom: 2px;
+}
+
+.comment{
+  list-style: none;
+  padding: 2rem;
+  width: 500px;
+}

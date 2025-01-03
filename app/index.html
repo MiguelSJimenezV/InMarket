@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="shortcut icon"
+      href="./assets/img/icons/icon-512x512.png"
+      type="image/x-icon"
+    />
+    <title>InMarket</title>
+    <!-- Bootstrap -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <!-- modificaciones CSS -->
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <!-- link Fetch -->
+    <!-- link Manifest -->
+    <link rel="manifest" href="manifest.json" />
+  </head>
+  <body>
+    <div id="notification" class="hide">
+      <span id="notification-message"></span>
+      <button onclick="closeNotification()">X</button>
+    </div>
+    <div class="bg-1">
+      <!-- Barra de Navegacion -->
+      <div class="bg-none">
+        <div class="container pt-3">
+          <nav class="container navbar navbar-expand-lg">
+            <div class="container-fluid text-light">
+              <a href="./index.html" class="navbar-brand text-light"
+                >InMarket</a
+              >
+              <button
+                class="navbar-toggler"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#navbarScroll"
+                aria-controls="navbarScroll"
+                aria-expanded="false"
+                aria-label="Toggle navigation"
+              >
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarScroll">
+                <ul
+                  class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll"
+                  style="--bs-scroll-height: 200px"
+                >
+                  <li class="nav-item">
+                    <a href="./index.html" class="nav-link btn text-light"
+                      >Inicio</a
+                    >
+                  </li>
+                  <li class="nav-item">
+                    <a
+                      href="./criptomonedas.html"
+                      class="nav-link btn text-light"
+                      >Criptomonedas</a
+                    >
+                  </li>
+                  <li class="nav-item">
+                    <button id="install-button" class="nav-link btn text-light">
+                      Descargar App
+                    </button>
+                  </li>
+                  <li class="nav-item">
+                    <a
+                      href="./login.html"
+                      class="nav-link btn text-light"
+                      >Iniciar Sesion</a
+                    >
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </nav>
+        </div>
+      </div>
+      <!-- Header -->
+      <div class="container">
+        <header class="bg-dark text-white">
+          <div
+            id="carouselExampleIndicators"
+            class="carousel slide"
+            data-bs-ride="carousel"
+          >
+            <div class="carousel-indicators">
+              <button
+                type="button"
+                data-bs-target="#carouselExampleIndicators"
+                data-bs-slide-to="0"
+                class="active"
+                aria-current="true"
+                aria-label="Slide 1"
+              ></button>
+              <button
+                type="button"
+                data-bs-target="#carouselExampleIndicators"
+                data-bs-slide-to="1"
+                aria-label="Slide 2"
+              ></button>
+              <button
+                type="button"
+                data-bs-target="#carouselExampleIndicators"
+                data-bs-slide-to="2"
+                aria-label="Slide 3"
+              ></button>
+            </div>
+            <div class="carousel-inner">
+              <div
+                class="carousel-item active c-bg-1 p-5 h-100"
+                data-bs-interval="3000"
+              >
+                <div class="container text-center w-100 h-100">
+                  <h1 class="display-4">¡Únete a la Revolución Digital!</h1>
+                  <p class="lead mb-0">
+                    Descubre el emocionante mundo de las criptomonedas con
+                    nuestro exchange seguro y confiable.
+                  </p>
+
+                  <a
+                    href="./criptomonedas.html"
+                    class="btn btn-warning m-3 text-dark text-decoration-none py-2 px-4"
+                    >Comienza a operar ahora</a
+                  >
+                </div>
+              </div>
+              <div
+                class="carousel-item c-bg-2 p-5 h-100"
+                data-bs-interval="3000"
+              >
+                <div class="container text-center w-100 h-100">
+                  <h1 class="display-4">¡Invierte con Criptomonedas!</h1>
+                  <p class="lead mb-0">
+                    Aprovecha la volatilidad del mercado y potencia tus
+                    ganancias con nuestra plataforma de trading intuitiva.
+                  </p>
+
+                  <a
+                    href="./criptomonedas.html"
+                    class="btn btn-warning m-3 text-dark text-decoration-none py-2 px-4"
+                    >Regístrate Gratis</a
+                  >
+                </div>
+              </div>
+              <div
+                class="carousel-item c-bg-3 p-5 h-100"
+                data-bs-interval="3000"
+              >
+                <div class="container text-center w-100 h-100">
+                  <h1 class="display-4">¡Seguridad en la Vanguardia!</h1>
+                  <p class="lead mb-0">
+                    Nuestra tecnología de punta garantiza la seguridad de tus
+                    activos en todo momento.
+                  </p>
+
+                  <a
+                    href="./criptomonedas.html"
+                    class="btn btn-warning m-3 text-dark text-decoration-none py-2 px-4"
+                    >Protege tus fondos ahora</a
+                  >
+                </div>
+              </div>
+            </div>
+            <button
+              class="carousel-control-prev"
+              type="button"
+              data-bs-target="#carouselExampleIndicators"
+              data-bs-slide="prev"
+            >
+              <span
+                class="carousel-control-prev-icon"
+                aria-hidden="true"
+              ></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button
+              class="carousel-control-next"
+              type="button"
+              data-bs-target="#carouselExampleIndicators"
+              data-bs-slide="next"
+            >
+              <span
+                class="carousel-control-next-icon"
+                aria-hidden="true"
+              ></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+        </header>
+      </div>
+      <!-- Section 1 -->
+      <section class="bg-none p-3">
+        <div class="container">
+          <h2 class="text-center mb-4">Nuestros Servicios</h2>
+          <div class="row">
+            <!-- Servicio 1 -->
+            <div class="col-md-3">
+              <div class="card p-3 text-white service-card h-100 transparente">
+                <div class="h-100 mb-3">
+                  <img
+                    src="./assets/img/c-1.png"
+                    class="card-img mb-5 w-25"
+                    alt="icon"
+                  />
+                  <h5 class="card-title">Compra y Venta Instantánea</h5>
+                  <p class="card-text">
+                    Convierte fácilmente entre criptomonedas y moneda fiat en
+                    cuestión de segundos. ¡Nuestra plataforma garantiza
+                    transacciones rápidas y seguras!
+                  </p>
+                </div>
+                <a href="./criptomonedas.html" class="btn btn-warning"
+                  >Compra Ahora</a
+                >
+              </div>
+            </div>
+            <!-- Servicio 2 -->
+            <div class="col-md-3">
+              <div class="card transparente p-3 text-white service-card h-100">
+                <div class="h-100 mb-3">
+                  <img
+                    src="./assets/img/c-2.png"
+                    class="card-img mb-5 w-25"
+                    alt="icon"
+                  />
+                  <h5 class="card-title">Plataforma de Trading Profesional</h5>
+                  <p class="card-text">
+                    Accede a herramientas avanzadas de trading y análisis
+                    técnico para maximizar tus ganancias. Nuestro exchange
+                    ofrece liquidez instantánea y ejecución de órdenes rápida.
+                  </p>
+                </div>
+                <a href="./criptomonedas.html" class="btn btn-warning"
+                  >Empieza a Operar</a
+                >
+              </div>
+            </div>
+            <!-- Servicio 3 -->
+            <div class="col-md-3">
+              <div class="card transparente p-3 text-white service-card h-100">
+                <div class="h-100 mb-3">
+                  <img
+                    src="./assets/img/c-3.png"
+                    class="card-img mb-5 w-25"
+                    alt="icon"
+                  />
+                  <h5 class="card-title">Cartera Digital Ultra Segura</h5>
+                  <p class="card-text">
+                    Almacena tus criptomonedas de forma segura con nuestra
+                    cartera digital de última generación. Con características de
+                    seguridad de vanguardia, tus activos están protegidos en
+                    todo momento.
+                  </p>
+                </div>
+                <a href="./criptomonedas.html" class="btn btn-warning"
+                  >Protege tus Activos</a
+                >
+              </div>
+            </div>
+            <!-- Servicio 4 -->
+            <div class="col-md-3">
+              <div class="card transparente p-3 text-white service-card h-100">
+                <div class="h-100 mb-3">
+                  <img
+                    src="./assets/img/c-4.png"
+                    class="card-img mb-5 w-25"
+                    alt="icon"
+                  />
+                  <h5 class="card-title">Soporte al Cliente Inigualable</h5>
+                  <p class="card-text">
+                    Nuestro equipo de expertos en criptomonedas está disponible
+                    las 24 horas, los 7 días de la semana para ayudarte con
+                    cualquier pregunta o problema que puedas tener. ¡Estamos
+                    aquí para ti!
+                  </p>
+                </div>
+                <a href="#contact" class="btn btn-warning">Contáctanos Ahora</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+    <div class="bg-2">
+      <!-- Section 2 -->
+      <section class="bg-none p-5">
+        <div class="container">
+          <div class="row">
+            <div class="col-6 p-5">
+              <h2 class="h5">Beneficios</h2>
+              <p class="h2">Descubre los Beneficios de Operar con Nosotros</p>
+              <p class="text-dark">
+                <span class="bg-warning"
+                  >Explora los beneficios únicos que ofrecemos en nuestro
+                  exchange de criptomonedas. Desde transacciones seguras hasta
+                  un soporte dedicado, estamos aquí para brindarte una
+                  experiencia excepcional en el mundo de las criptomonedas.
+                </span>
+              </p>
+              <button class="btn p-0 m-0">
+                <a class="btn btn-warning" href="./criptomonedas.html"
+                  >Compra Criptomonedas</a
+                >
+              </button>
+              <button id="shareButton" class="btn btn-warning">
+                Compartir
+              </button>
+            </div>
+            <div class="col-6">
+              <div class="row" id="cryptoContaineri"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+    <div class="bg-3">
+      <!-- Section 3 -->
+      <section class="bg-none p-5">
+        <div class="container transparente border radio">
+          <div class="row p-5">
+            <div class="col-6 radio p-0 m-0">
+              <img
+                src="./assets/img/btc-1.jpg"
+                class="h-100 w-100 border radio transparente"
+                alt="imagen"
+              />
+            </div>
+            <div class="col-6 p-5">
+              <div class="h-100">
+                <h2 class="h5 mb-2">Sobre Nosotros</h2>
+                <p class="h2 mb-3">¿Por que InMArket?</p>
+                <p>
+                  En InMarket, nos esforzamos por ofrecer una experiencia de
+                  trading excepcional. Desde nuestra plataforma segura hasta
+                  nuestro equipo dedicado, estamos aquí para hacer que tu
+                  experiencia con las criptomonedas sea fluida y exitosa.
+                </p>
+                <div class="row p-3 text-center">
+                  <div class="col-3">
+                    <h4 class="h1">4+</h4>
+                    <p>Servicios</p>
+                  </div>
+                  <div class="col-3">
+                    <h4 class="h1">15K+</h4>
+                    <p>Usuarios</p>
+                  </div>
+                  <div class="col-3">
+                    <h4 class="h1">8K+</h4>
+                    <p>Comunidad</p>
+                  </div>
+                  <div class="col-3">
+                    <h4 class="h1">98%</h4>
+                    <p>Presición</p>
+                  </div>
+                  <div>
+                    <button class="btn p-0 m-0 mt-3">
+                      <a class="btn btn-warning" href="./criptomonedas.html"
+                        >Comienza a Operar</a
+                      >
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Formulario de Contacto -->
+      <section>
+        <div class="container p-5">
+          <h2>Contáctanos</h2>
+          <p class="w-75" id="contact">
+            ¡Únete a nuestra comunidad o ponte en contacto con nosotros hoy
+            mismo! Completa el formulario a continuación para empezar. Nuestro
+            equipo estará encantado de ayudarte en lo que necesites.
+          </p>
+          <form
+            action=""
+            method="get"
+            class="px-5 py-3"
+            onsubmit="vGenerales(event)"
+            id="formulario"
+          >
+            <div>
+              <label for="name" class="mb-2">Nombre</label>
+              <input
+                type="text"
+                name="name"
+                id="name"
+                placeholder="Miguel"
+                oninput="validarNombre()"
+                required
+                class="form-control is-invalid mb-3"
+              />
+              <div class="vNombre"></div>
+            </div>
+
+            <div>
+              <label for="surname" class="mb-2">Apellido</label>
+              <input
+                type="text"
+                name="surname"
+                id="surname"
+                placeholder="Jimenez"
+                oninput="vSurname()"
+                required
+                class="form-control is-invalid mb-3"
+              />
+              <div class="vSurname"></div>
+            </div>
+            <div>
+              <label for="email" class="mb-2">E-mail</label>
+              <input
+                type="email"
+                name="email"
+                id="email"
+                oninput="vEmail()"
+                required
+                class="form-control is-invalid mb-3"
+                placeholder="Example@gmail.com"
+              />
+              <div class="vEmail"></div>
+            </div>
+
+            <div class="p-2">
+              <input
+                type="checkbox"
+                name="checkbox"
+                id="checkbox"
+                onclick="vCheckbox()"
+              />
+              <label for="checkbox"
+                >Acepto todos los Terminos y Condiciones</label
+              >
+              <div class="vCheckbox"></div>
+            </div>
+            <div>
+              <button
+                id="btn"
+                class="btn btn-dark"
+                type="submit"
+                onclick="vGenerales(event)"
+              >
+                Enviar
+              </button>
+              <div class="vBtn"></div>
+            </div>
+          </form>
+        </div>
+      </section>
+    </div>
+
+    <!-- Footer -->
+    <div class="bg-dark">
+      <div class="container text-light">
+        <footer class="py-5">
+          <div class="row text-light">
+            <div class="col-6 col-md-2 mb-3 text-light">
+              <h5>Explorar</h5>
+              <ul class="nav flex-column text-light">
+                <li class="nav-item mb-2">
+                  <a href="#" class="nav-link p-0 text-light">Inicio</a>
+                </li>
+                <li class="nav-item mb-2">
+                  <a href="#" class="nav-link p-0 text-light"
+                    >Distribucion Musical</a
+                  >
+                </li>
+                <li class="nav-item mb-2">
+                  <a href="#" class="nav-link p-0 text-light">Nosotros</a>
+                </li>
+                <li class="nav-item mb-2">
+                  <a href="#" class="nav-link p-0 text-light">Contacto</a>
+                </li>
+              </ul>
+            </div>
+
+            <div class="col-6 col-md-2 mb-3">
+              <h5>Recursos</h5>
+              <ul class="nav flex-column">
+                <li class="nav-item mb-2">
+                  <a href="#" class="nav-link p-0 text-light"
+                    >Condiciones Generales</a
+                  >
+                </li>
+                <li class="nav-item mb-2">
+                  <a href="#" class="nav-link p-0 text-light"
+                    >Preguntas Frecentes</a
+                  >
+                </li>
+                <li class="nav-item mb-2">
+                  <a href="#" class="nav-link p-0 text-light"
+                    >Trabaja con Nosotros</a
+                  >
+                </li>
+                <li class="nav-item mb-2">
+                  <a href="#" class="nav-link p-0 text-light"
+                    >Politicas de Privacidad</a
+                  >
+                </li>
+              </ul>
+            </div>
+
+            <div class="col-6 col-md-2 mb-3">
+              <h5>Comunidad</h5>
+              <ul class="nav flex-column">
+                <li class="nav-item mb-2">
+                  <a href="#" class="nav-link p-0 text-light">Instagram</a>
+                </li>
+                <li class="nav-item mb-2">
+                  <a href="#" class="nav-link p-0 text-light">Facebook</a>
+                </li>
+                <li class="nav-item mb-2">
+                  <a href="#" class="nav-link p-0 text-light">Twitter</a>
+                </li>
+                <li class="nav-item mb-2">
+                  <a href="#" class="nav-link p-0 text-light">Youtube</a>
+                </li>
+              </ul>
+            </div>
+
+            <div class="col-md-5 offset-md-1 mb-3">
+              <h3 class="text-warning">InMarket</h3>
+              <p>Construye tu carrera artística bajo tus propios términos.</p>
+            </div>
+          </div>
+
+          <div
+            class="d-flex flex-column flex-sm-row justify-content-center py-4 my-4 border-top"
+          >
+            <p>&copy; 2024 InMarket S.A. Todos los derechos reservados.</p>
+          </div>
+        </footer>
+      </div>
+    </div>
+
+    <!-- bootstrap -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+    <!-- Jquerys -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- Sweet Alert -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <!-- Validacion para Formulario -->
+    <script src="./assets/js/index.js"></script>
+    <script src="./assets/js/formValid.js"></script>
+    <script src="./assets/js/app.js"></script>
+
+  </body>
+</html>

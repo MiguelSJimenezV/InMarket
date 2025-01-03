@@ -1,0 +1,132 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap");
+body {
+  font-family: "Montserrat", sans-serif;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.bg-1 {
+  background-image: url("../img/bg-4.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: #ffffff;
+}
+
+.bg-2 {
+  background-image: url("../img/bg-2.jpg");
+  background-size: contain;
+  color: whitesmoke;
+}
+
+.bg-3 {
+  background-image: url("../img/bg-6.jpg");
+  background-size: cover;
+  color: whitesmoke;
+}
+
+.c-bg-1 {
+  background-image: url("../img/bg-4.jpg");
+}
+
+.c-bg-2 {
+  background-image: url("../img/bg-4.jpg");
+  background-size: cover;
+  background-position: 0px 100px;
+}
+
+.c-bg-3 {
+  background-image: url("../img/bg-4.jpg");
+  background-size: cover;
+  overflow: hidden;
+  background-repeat: no-repeat;
+  background-position: 0;
+}
+
+.transparente {
+  background-color: rgba(
+    249,
+    249,
+    249,
+    0.142
+  ); /* Color de fondo con transparencia */
+  border-radius: 10px; /* Bordes redondeados */
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5); /* Sombra con efecto de difuminado */
+  backdrop-filter: blur(5px);
+  transition: all 0.5s;
+}
+
+.transparente:hover {
+  background-color: rgba(
+    249,
+    249,
+    249,
+    0.123
+  ); /* Color de fondo con transparencia */
+  border-radius: 0px; /* Bordes redondeados */
+  backdrop-filter: blur(0px);
+  transition: all 0.3s;
+}
+
+.bg-oscuro {
+  background: linear-gradient(
+    to bottom,
+    rgb(0, 0, 0),
+    transparent
+  ); /* Fondo oscuro con brillo ascendente */
+  background-color: rgba(
+    255,
+    255,
+    255,
+    0.184
+  ); /* Color de fondo semi-transparente */
+  border-radius: 10px; /* Bordes redondeados */
+  transition: all 0.5s;
+}
+
+.bg-oscuro:hover {
+  background-color: rgba(255, 255, 255, 0.43);
+  transition: all 0.3s;
+}
+
+.radio {
+  border-radius: 10px;
+}
+/* Estilos para la notificación */
+/* CSS para notificaciones */
+#notification {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: green;
+  color: white;
+  padding: 15px;
+  border-radius: 5px;
+  z-index: 1000;
+  display: none;
+}
+#notification.online {
+  background-color: green;
+}
+#notification.offline {
+  background-color: red;
+}
+#notification.show {
+  display: block;
+}
+#notification.hide {
+  display: none;
+}
+#notification button {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 20px;
+  line-height: 20px;
+  padding: 0;
+  margin-left: 15px;
+  cursor: pointer;
+}
